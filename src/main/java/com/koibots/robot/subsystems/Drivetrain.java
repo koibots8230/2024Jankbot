@@ -16,7 +16,7 @@ public class Drivetrain extends SubsystemBase{
     private VictorSPX secondaryLeftMotor;
     private VictorSPX secondaryRightMotor;
 
-    public static Drivetrain m_Drivetrain;
+    public static Drivetrain m_Drivetrain = new Drivetrain();
 
     public Drivetrain() {
         mainLeftMotor = new VictorSPX(Constants.MAIN_LEFT_MOTOR_ID);
@@ -24,7 +24,8 @@ public class Drivetrain extends SubsystemBase{
         secondaryLeftMotor = new VictorSPX(Constants.SECONDARY_LEFT_MOTOR_ID);
         secondaryRightMotor = new VictorSPX(Constants.SECONDARY_RIGHT_MOTOR_ID);
 
-        m_Drivetrain = new Drivetrain();
+        mainLeftMotor.setInverted(true);
+        secondaryLeftMotor.setInverted(true);
     }
 
     public void setMotorSpeeds(double leftSpeed, double rightSpeed) {

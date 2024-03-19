@@ -12,7 +12,7 @@ public class RobotContainer {
 
     public void configureButtonBindings() {
         Drivetrain.get().setDefaultCommand(Drivetrain.get().new driveMotorCommand(
-            () -> driverController.getLeftY(), 
-            () -> driverController.getRightY()));
+            () -> driverController.getLeftY() * -1.0, 
+            () -> driverController.getRightY() * -1.0));
     }
 }
