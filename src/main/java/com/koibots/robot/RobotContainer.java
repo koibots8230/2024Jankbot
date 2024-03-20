@@ -1,13 +1,13 @@
 package com.koibots.robot;
 
-import com.koibots.robot.controlls.EightBitDo;
 import com.koibots.robot.subsystems.Drivetrain;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
-    private EightBitDo driverController;
+    private CommandXboxController driverController;
 
     public RobotContainer() {
-        driverController = new EightBitDo(0);
+        driverController = new CommandXboxController(0);
     }
 
     public void configureButtonBindings() {
